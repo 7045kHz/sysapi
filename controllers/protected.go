@@ -11,7 +11,7 @@ import (
 
 func (c Controller) GetSystems(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		all := Systems.GetAll(db)
+		all := systems.GetAll(db)
 		utils.ResponseJSON(w, all)
 		fmt.Printf("success. \n")
 
@@ -20,7 +20,7 @@ func (c Controller) GetSystems(db *sql.DB) http.HandlerFunc {
 func (c Controller) UpdateSystems(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		// json.NewDecoder(r.Body).Decode(&user)
-		err := Systems.Update(db, r)
+		err := systems.Update(db, r)
 		if err != nil {
 			fmt.Printf("System.Update error: %v\n", err)
 			var e models.Error

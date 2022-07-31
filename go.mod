@@ -1,4 +1,4 @@
-module github.com/7045kHz/sysapi
+module sysapi
 
 go 1.18
 
