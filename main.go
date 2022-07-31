@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/7045kHz/sysapi/controllers"
-	"github.com/7045kHz/sysapi/driver"
-	"github.com/7045kHz/sysapi/utils"
+	"sysapi/controllers"
+	"sysapi/driver"
+	"sysapi/utils"
 	"database/sql"
 	"log"
 	"net/http"
