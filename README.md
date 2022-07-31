@@ -11,6 +11,10 @@ PG_CONNECT="your posgress connection string"
 SECRET="your JWT Token secret"
 ```
 
+```go
+go env GO111MODULE=off
+```
+
 ## Postgress DB Scheme
 
 ## Create the table with the following sql statement
@@ -30,9 +34,12 @@ create  table systems (
   id serial primary key,
   hostname text not null unique,
   domain text not null,
+  uuid text not null unique,
   device_type text not null,
-  machine_id text not null unique,
-  device_status text,
+  device_sn text not null unique,
+  model text not null unique,
+  vendor text not null,
+  environment text,
   scan_timestamp timestamp  
 );
 
@@ -79,4 +86,10 @@ create  table procfs_swaps (
   priority int not null  ,
   scan_timestamp timestamp  
 );
+```
+
+## Example insert
+
+```json
+{"systems":[{"hostname":"deskctop1","domain":"example.com","uuid":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX","device_type":"Desktop","device_sn":"SNABC1234","model":"XXYYZZ","vendor":"HP","environment":"Production"}]}
 ```

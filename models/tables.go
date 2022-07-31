@@ -48,8 +48,11 @@ type Systems struct {
 	ID             int    `json:"id,omitempty"`
 	Hostname       string `json:"hostname,omitempty"`
 	Domain         string `json:"domain,omitempty"`
+	UUID     string `json:"uuid,omitempty"`
 	Device_Type    string `json:"device_type,omitempty"`
-	Machine_ID     string `json:"machine_id,omitempty"`
-	Device_Status  string `json:"device_status,omitempty"`
+	Device_SN     string `json:"device_sn,omitempty"`
+	Model  string `json:"model,omitempty"`
+	Vendor  string `json:"vendor,omitempty"`
+	Environment  string `json:"environment,omitempty"`
 	Scan_Timestamp string `json:"scan_timestamp,omitempty"`
 }
